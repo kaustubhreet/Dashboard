@@ -1,0 +1,23 @@
+//redux implementation 
+import { createSlice } from "@reduxjs/toolkit";
+
+//set-up dark and light mode globally
+const initialState={
+    mode:"dark",
+    userId:"63701cc1f03239c72c000181",
+};
+
+
+export const globalSlice=createSlice({
+    name:"global",
+    initialState,
+    reducers:{
+        setMode:(state)=>{
+            state.mode=state.mode==='light'?'dark':'light';
+        }
+    }
+})
+
+export const {setMode} =globalSlice.actions;
+
+export default globalSlice.reducer;
